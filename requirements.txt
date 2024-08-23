@@ -1,0 +1,4 @@
+jpype1
+tabula-py
+pdf2image
+boto3
