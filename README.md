@@ -15,15 +15,6 @@ This project requires the following components to be installed in your runtime e
    - **Ubuntu/Debian**: `sudo apt-get install poppler-utils`
 - **AWS CLI**: Install following the official guide from [AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-## Verification
-
-After installing the required components, verify the setup with the following commands:
-
-- **JRE**: `java -version`
-- **Poppler**: `pdftotext -v`
-- **AWS CLI**: `aws --version`
-- **Python**: `python --version` or `python3 --version`
-
 ## Installation
 
 1. **Clone the repository**:
