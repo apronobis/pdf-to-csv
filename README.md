@@ -30,11 +30,17 @@ This project requires the following components to be installed in your runtime e
     ```bash
     pip install -r requirements.txt
     ```
-4. **Verify runtime environment**:
+4. **Configure AWS CLI**:
+    Set up the AWS CLI by running this command in your terminal. 
+    ```bash
+    aws configure
+    ```
+    You'll be prompted to enter your AWS Access Key ID, Secret Access Key, default region, and output format.
+5. **Verify runtime environment**:
     ```bash
     java -v
     pdftoppm -v
-    aws --version
+    aws sts get-caller-identity
     ```
 
 ## Usage
@@ -46,3 +52,20 @@ python extract.py
 ```
 
 The result will be saved as a CSV file in the output folder.
+
+## Running the Project with Docker
+
+### 1. Build the Docker Image
+
+Navigate to the project directory and build the Docker image:
+
+```bash
+docker build -t pdf-to-excel .
+```
+
+### 2. Run the Docker Container
+Run the container, mounting AWS credentials and the output directory:
+```bash
+docker run --rm -it -v ~/.aws:/root/.aws -v ./output:/app/output pdf-to-excel
+```
+This runs the process and saves `outputs` in the output folder.
